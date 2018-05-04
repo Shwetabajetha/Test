@@ -26,7 +26,7 @@ public class Account {
 		   
 		   driver.findElement(By.id("save")).click();
 		   Thread.sleep(1000);
-		   
+		   //I have done changes
 		   driver.get("https://ap5.lightning.force.com/one/one.app#/setup/SetupOneHome/home");
 		   driver.findElement(By.name("Account_Tab")).click();
 		   Thread.sleep(500);
