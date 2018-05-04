@@ -1,0 +1,24 @@
+public class ContactTriggerForEmp {
+    public static void addContacts(List<Account>accList){
+        List<Contact> conList=new List<Contact>();
+        integer lim=0;
+        for(account acc:accList){
+           lim=acc.NumberOfEmployees;
+            
+        for(integer i=0;i<lim;i++){
+            Contact con=new Contact(AccountId=acc.id,lastname='Aoo'+i);
+            conList.add(con);
+        }
+    }
+        insert conList;
+    }
+    public static void updateContacts(List<Account> accList){
+        Set<id>accIds=new Set<id>();
+        for(Account acc:accList){
+            accIds.add(acc.Id);
+        }
+        List <Contact> conList=[SELECT id from contact where Accountid in : accIds];
+        delete conList;
+        ContactTriggerForEmp.addContacts(accList);
+    }
+}
